@@ -1,9 +1,13 @@
-# Atlas-Vital
-Atlas Vital é uma plataforma interativa que reúne e visualiza dados sobre nascimentos, casamentos e óbitos no Brasil. O projeto transforma estatísticas demográficas em informações acessíveis, facilitando análises sobre o ciclo da vida da população brasileira.
+# Atlas Vital
 
-A equipe do projeto é composta por 3 desenvolvedores, sendo eles:
-  Igor 
-  Daniel
-  Emmanuel 
+## Descrição
+O **Atlas Vital** é uma plataforma interativa voltada para a organização e visualização de dados sobre nascimentos, casamentos e óbitos no Brasil. O projeto busca tornar as estatísticas demográficas mais acessíveis, promovendo análises e reflexões sobre o ciclo da vida da população brasileira.
 
-Link do Front-end do projeto: 
+## Equipe
+- Igor
+- Daniel
+- Emmanuel
+
+## Link do Front-end
+[Em breve]
+
