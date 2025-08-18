@@ -1,4 +1,4 @@
-# Atlas Vital
+# Atlas Vital Backend
 
 ## Descrição
 O **Atlas Vital** é uma plataforma interativa voltada para a organização e visualização de dados sobre nascimentos, casamentos e óbitos no Brasil. O projeto busca tornar as estatísticas demográficas mais acessíveis, promovendo análises e reflexões sobre o ciclo da vida da população brasileira.
@@ -8,6 +8,6 @@ O **Atlas Vital** é uma plataforma interativa voltada para a organização e vi
 - Daniel
 - Emmanuel
 
-## Link do Front-end
+## Link do Frontend
 [Em breve]
 
