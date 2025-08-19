@@ -7,13 +7,10 @@ class Microrregiao(db.Model):
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
     nome: Mapped[str] = mapped_column(Text, nullable=True)
+    cod_mesorregiao: Mapped[int] = mapped_column(ForeignKey("tb_mesorregiao.id"), index=True)
 
-    mesorregiao_id: Mapped[int] = mapped_column(ForeignKey("tb_mesorregiao.id"))
-    uf_id: Mapped[int] = mapped_column(ForeignKey("tb_uf.id"))
-
-    # relacionamentos
+    # Relacionamentos
     mesorregiao: Mapped["Mesorregiao"] = relationship("Mesorregiao", back_populates="microrregioes")
-    uf: Mapped["Uf"] = relationship("Uf", back_populates="microrregioes")
     municipios: Mapped[list["Municipio"]] = relationship(
         "Municipio", back_populates="microrregiao", cascade="all, delete-orphan"
     )

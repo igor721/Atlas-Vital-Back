@@ -8,15 +8,12 @@ class Municipio(db.Model):
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
     nome: Mapped[str] = mapped_column(Text, nullable=True)
 
-    uf_id: Mapped[int] = mapped_column(ForeignKey("tb_uf.id"))
-    microrregiao_id: Mapped[int] = mapped_column(ForeignKey("tb_microrregiao.id"))
+    cod_uf: Mapped[int] = mapped_column(ForeignKey("tb_uf.id"), index=True)
+    cod_microrregiao: Mapped[int] = mapped_column(ForeignKey("tb_microrregiao.id"), index=True)
 
-    # estatísticas
-    total_morte: Mapped[int] = mapped_column(Integer, nullable=True)
-    total_nascimento: Mapped[int] = mapped_column(Integer, nullable=True)
-    total_casamento: Mapped[int] = mapped_column(Integer, nullable=True)
-    ano: Mapped[int] = mapped_column(Integer, nullable=True)
-
-    # relacionamentos
+    # Relacionamentos
     uf: Mapped["Uf"] = relationship("Uf", back_populates="municipios")
     microrregiao: Mapped["Microrregiao"] = relationship("Microrregiao", back_populates="municipios")
+    estatisticas: Mapped[list["MunicipioEstatistica"]] = relationship(
+        "MunicipioEstatistica", back_populates="municipio", cascade="all, delete-orphan"
+    )

@@ -2,7 +2,7 @@ from helpers.database import app, db
 from helpers.CORS import cors
 
 from helpers.application import api
-from models import Uf, Mesorregiao, Microrregiao, Municipio, Regiao
+from models import Regiao, Uf, UfEstatistica, Mesorregiao, Microrregiao, Municipio, MunicipioEstatistica
 
 from resources.EstadoResource import EstadosResource, EstadoResource
 from resources.MesorRegResource import MesorRegsResource, MesoRegResource
