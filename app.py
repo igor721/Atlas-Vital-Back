@@ -1,36 +1,34 @@
 from helpers.database import app, db
-from helpers.CORS import cors
+from flask_restful import Api
+from flask_migrate import Migrate
+from flask_cors import CORS
 
-from helpers.application import api
-from models import Regiao, Uf, UfEstatistica, Mesorregiao, Microrregiao, Municipio, MunicipioEstatistica
+# Habilita CORS para toda a API
+CORS(app)
 
-from resources.EstadoResource import EstadosResource, EstadoResource
-from resources.MesorRegResource import MesorRegsResource, MesoRegResource
-from resources.MicrorRegResource import MicrorRegsResource, MicrorRegResource
-from resources.MunicipioResource import MunicipiosResource, MunicipioResource
+# Imports dos resources...
+from resources.RegiaoResource import RegiaoResource
+from resources.UfResouce import UfResource
+from resources.MesorregiaoResource import MesorregiaoResource
+from resources.MicrorregiaoResource import MicrorregiaoResource
+from resources.MunicipioResource import MunicipioResource
+from resources.UfEstatisticaResource import UfEstatisticaResource
+from resources.MunicipioEstatisticaResource import MunicipioEstatisticaResource
+from resources.CartorioResource import CartorioResource, CartorioDetailResource
 
-from resources.IndexResource import IndexResource
+api = Api(app)
+migrate = Migrate(app, db)
 
+# Rotas da API
+api.add_resource(RegiaoResource, "/regioes")
+api.add_resource(UfResource, "/ufs")
+api.add_resource(MesorregiaoResource, "/mesorregioes")
+api.add_resource(MicrorregiaoResource, "/microrregioes")
+api.add_resource(MunicipioResource, "/municipios")
+api.add_resource(UfEstatisticaResource, "/ufs/<int:uf_id>/<int:ano>/estatisticas")
+api.add_resource(MunicipioEstatisticaResource, "/ufs/<int:uf_id>/<int:ano>/municipios/estatisticas")
+api.add_resource(CartorioResource, "/cartorios")
+api.add_resource(CartorioDetailResource, "/cartorios/<int:id>")
 
-cors.init_app(app)
-
-api.add_resource(IndexResource, '/')
-
-# EndPoint Estados
-api.add_resource(EstadosResource, '/estados')
-api.add_resource(EstadoResource, '/estados/<int:id>')
-
-# endPoint Mesor
-api.add_resource(MesorRegsResource, '/mesoregioes')
-api.add_resource(MesoRegResource, '/mesoregioes/<int:id>')
-
-# endPoint Micro
-api.add_resource(MicrorRegsResource, '/microregioes')
-api.add_resource(MicrorRegResource, '/microregioes/<int:id>')
-
-# endPoint Municipio
-api.add_resource(MunicipiosResource, '/municipios')
-api.add_resource(MunicipioResource, '/municipios/<int:id>')
-
-
-
+if __name__ == "__main__":
+    app.run(debug=True)

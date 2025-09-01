@@ -5,3 +5,4 @@ from .Mesorregiao import Mesorregiao
 from .Microrregiao import Microrregiao
 from .Municipio import Municipio
 from .MunicipioEstatisticas import MunicipioEstatistica
+from .Cartorio import Cartorio
