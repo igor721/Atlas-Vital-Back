@@ -11,3 +11,12 @@ O **Atlas Vital** é uma plataforma interativa voltada para a organização e vi
 ## Link do Frontend
 https://github.com/igor721/Atlas-Vital-Front
 
+## Como iniar o Backend
+
+Após clonar o repositório, precisamos seguir alguns passos básicos, vamos começar instalando o nosso ambiente virtual para isolar as dependências do projeto, para isso, rode o cmando:
+
+  - python -m venv venv
+
+Após a instalação do nosso ambiente virutal, o VSCode indetifica automaticamente a criação do novo ambiente e pergunta se desejamos usá-lo, como mostra o print abaixo: 
+
+  - irei adiconar o print 
